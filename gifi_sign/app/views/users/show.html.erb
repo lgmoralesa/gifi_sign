@@ -4,9 +4,10 @@
 
 <div class="col-sm-10 well container" style="margin-left: 8%">
 	<%= gravatar_for @user %>
+	<br><br>
 	<h1 class="titulo"><%= @user.name %></h1>
 	<br>
-	<%= @user.name %>, <%= @user.email %>
+	<%= @user.email %>
 </div>
 
 <br>
@@ -19,6 +20,6 @@
 		<div class="col-md-10">
 			<h1 class="titulo"><%= @user.name %></h1>
 			<br>
-			<%= @user.name %>, <%= @user.email %>
+			<%= @user.email %>
 		</div>
 </div>
