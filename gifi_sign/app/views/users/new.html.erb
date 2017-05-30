@@ -1,0 +1,41 @@
+<% provide(:title, 'Sign up') %>
+<br>
+<div class="col-sm-10 well" style="margin-left: 8%">
+				<h1 class="titulo" align="center">Sign up</h1>
+			
+	<br><br>
+	<div class="row">
+
+		<div class = "col-sm-4"></div>
+		
+		<div class = "col-sm-4 well">
+
+			<%= form_for(@user) do |f| %>
+				<%= render 'shared/error_messages' %>
+				<br>
+				<%= f.label :name %>
+				<%= f.text_field :name, placeholder: 'Ingrese su nombre', class: 'form-control' %>
+				<br>
+				<%= f.label :email %>
+				<%= f.text_field :email, placeholder: 'Ingrese su correo', class: 'form-control' %>
+				<br>
+				<%= f.label :password %>
+				<%= f.password_field :password, placeholder: 'Ingrese su contraseña', class: 'form-control' %>
+				<br>
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation, placeholder: 'Por favor, confime su contraseña', class: 'form-control' %>
+				<br>
+				<%= f.submit "Crear Cuenta", class: "btn btn-primary myButton" %>
+
+
+			<% end %>
+		</div>
+
+        <div class = "col-sm-4"></div>
+
+    </div>
+</div>
+</div>
+
+
+

@@ -1,0 +1,32 @@
+<%= form_with(model: resumee, local: true) do |form| %>
+  <% if resumee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resumee.errors.count, "error") %> prohibited this resumee from being saved:</h2>
+
+      <ul>
+      <% resumee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :resumee_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :resumee_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attachment %>
+    <%= form.text_field :attachment, id: :resumee_attachment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
