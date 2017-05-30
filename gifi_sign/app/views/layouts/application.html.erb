@@ -103,13 +103,32 @@
       </div>
       <div id="bs-navbar" class="navbar-collapse collapse navigation">
         <div class="site-url">
-          <a href="http://subdominio.unal.edu.co/">gifi.unal.edu.co</a>
+          <%= link_to "gifi.unal.edu.co", root_url %>
         </div>
+
         <div class="buscador">
           <div class="gcse-searchbox-only" data-resultsUrl="http://unal.edu.co/resultados-de-la-busqueda/" data-newWindow="true"></div>
         </div>
         <div class="mainMenu">
-          <div class="btn-group"><a href="index.html#" class="btn btn-default dropdown-toggle">Acerca de GIFI</a><span class="caret-right"></span></div>
+          <div class="btn-group"><%= link_to "Acerca de GIFI", root_url, class: 'btn btn-default dropdown-toggle' %><span class="caret-right"></span></div>
+
+
+          <% if logged_in? %>
+            <div class="btn-group">
+              <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mi cuenta<span class="caret"></span></div>
+              <ul class="dropdown-menu dropItem-16">
+                <li><%= link_to "Perfil", current_user %><span class="caret-right"></span></li>
+                <li><%= link_to "Configuraciones", '#' %><span class="caret-right"></span></li>
+                <li class="divider"></li>
+                <li><%= link_to "Salir", logout_path, method: "delete" %><span class="caret-right"></span></li>
+              </ul>
+            </div>
+
+          <% else %>
+            <div class="btn-group"><%= link_to "Log in", login_path, class: 'btn btn-default dropdown-toggle' %><span class="caret-right"></span></div>
+          <% end %>
+
+
           <div class="btn-group">
             <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Sedes<span class="caret"></span></div>
             <ul class="dropdown-menu dropItem-16">

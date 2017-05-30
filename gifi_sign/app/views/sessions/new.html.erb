@@ -1,0 +1,36 @@
+<% provide(:title, 'Log in') %>
+<br>
+<div class="col-sm-10 well" style="margin-left: 8%">
+				<h1 class="titulo" align="center">Log in</h1>
+			
+	<br><br>
+	<div class="row">
+
+		<div class = "col-sm-4"></div>
+		
+		<div class = "col-sm-4 well">
+
+			<%= form_for(:session, url: login_path) do |f| %>
+
+				<%= f.label :email %>
+				<%= f.text_field :email, placeholder: 'Ingrese su correo', class: 'form-control' %>
+				<br>
+				<%= f.label :password %>
+				<%= f.password_field :password, placeholder: 'Ingrese su contraseña', class: 'form-control' %>
+				<br>
+				<%= f.submit "Acceder", class: 'btn btn-success myButton' %>
+			<% end %>
+			<br/><br/>
+			<p>Si eres usuario nuevo:</p>
+			<br/>
+                <%= link_to "Sign up", signup_path, class: "btn btn-primary myButton" %>
+		</div>
+
+        <div class = "col-sm-4"></div>
+
+    </div>
+</div>
+</div>
+
+
+
